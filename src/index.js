@@ -1,35 +1,30 @@
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
+    const cors = {
+      "Access-Control-Allow-Origin": "https://mkhi69756-collab.github.io",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+      "Content-Type": "application/json"
+    };
 
     if (request.method === "OPTIONS") {
-      return new Response(null, {
-        headers: corsHeaders(env)
-      });
+      return new Response(null, { headers: cors });
     }
+
+    const url = new URL(request.url);
 
     if (url.pathname === "/") {
       return Response.json({
         status: "online",
         message: "MTD Mining Backend Running!"
-      }, { headers: corsHeaders(env) });
+      }, { headers: cors });
     }
 
     return Response.json({
       error: "Route not found"
     }, {
       status: 404,
-      headers: corsHeaders(env)
+      headers: cors
     });
   }
 };
-
-function corsHeaders(env) {
-  return {
-    "Access-Control-Allow-Origin":
-      env.FRONTEND_ORIGIN || "https://mkhi69756-collab.github.io",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Admin-Key",
-    "Content-Type": "application/json"
-  };
-}
