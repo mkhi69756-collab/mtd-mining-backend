@@ -1,0 +1,13 @@
+{
+  "name": "mtd-mining-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MTD Mining Backend API",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.165.0"
+  }
+}
