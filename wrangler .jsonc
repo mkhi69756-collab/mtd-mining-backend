@@ -1,14 +1,13 @@
+
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mtd-mining-backend",
   "main": "src/index.js",
-  "compatibility_date": "2026-11-19",
-  "workers_dev": true,
+  "compatibility_date": "2026-11-20",
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "mtd-mining-db",
-      "database_id": "28079166-347d-46e7-b893-fbf200f5af78"
+      "database_name": "mtd-mining-db-2026",
+      "database_id": "d9c0d48a-8e08-4b7c-b4ba-f5fa851"
     }
   ]
 }
